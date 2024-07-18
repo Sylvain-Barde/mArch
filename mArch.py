@@ -164,6 +164,8 @@ class mArch:
             Setup the multivariate arch model
         fit
             Fit the multivariate arch model
+        checkBoundary
+            Check that the DCC/DCCA stability condition is met
         forecast
             Forecast values uing a fitted multivariate arch model
         summary
