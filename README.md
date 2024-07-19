@@ -27,7 +27,7 @@ from mArch import mArch
 
 ### Initialisation
 
-An empty multivariate GARRCH estimation object is initialised using the empirical data set:
+An empty multivariate GARCH estimation object is initialised using an empirical data set, contained in a `pandas` dataframe:
 
 ```python
 mArchEst = mArch(myDataFrame)
@@ -52,7 +52,7 @@ mArchEst.setArch(univarSpec,
 ```
 
 EGARCH is used as an example here, however the toolbox will accept all the individual volatility processes present in the `arch` toolbox. These simply need to be imported first. The toolbox has four multivariate specifications:
-- `'naive'`: this models the correlation matrix using the identity matrix, essentially treating the series as independent. This can be useful for running batch univariate estimations.
+- `'naive'`: this models the correlation matrix using the identity matrix, essentially treating the series as independent. This can be useful for running batched univariate estimations.
 - `'ccc'`: This implements the Constant Conditional Correlation model of Bollerslev (1990)
 - `'dcc'`: This implements the Dynamic Conditional Correlation model of Engle (2002)
 - `'dcca'`: This implements the Asymmetric Dynamic Conditional Correlation of Cappiello et.
@@ -89,8 +89,8 @@ The `mArch` toolbox also provides multivariate forecasting, again using a simila
 ```python
 forecastMethod = 'simulation'
 Sigma_t_Predicted = mArchEst.forecast(horizon = 5,
-                                  start = split_date,
-                                  method = forecastMethod)
+                                      start = split_date,
+                                      method = forecastMethod)
 ```
 
 ## References:
